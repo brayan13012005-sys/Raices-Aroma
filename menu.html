@@ -1,0 +1,2612 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="imagenes/LogoR&A.png"/>
+
+<title>Raíces y Aroma | Menú</title>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root {
+    --verde: #5f7d4f;
+    --verde-oscuro: #405b36;
+    --cafe: #a6856a;
+    --crema: #faf7f0;
+    --crema-oscuro: #eee7da;
+    --oscuro: #303c2b;
+    --blanco: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'DM Sans', sans-serif;
+    background: var(--crema);
+    color: var(--oscuro);
+}
+
+/* ============================= */
+/* HEADER */
+/* ============================= */
+/* ENCABEZADO */
+
+        header {
+            background: var(--verde);
+            color: white;
+            padding: 17px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 3px 12px #00000018;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 13px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #f0d8b9;
+        }
+
+        .boton-carrito {
+            border: 2px solid #ffffff80;
+            background: #ffffff18;
+            color: white;
+            padding: 10px 17px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 14px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .boton-carrito:hover {
+            background: white;
+            color: var(--verde);
+        }
+
+        .contador {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            background: var(--cafe);
+            color: white;
+            width: 23px;
+            height: 23px;
+            border-radius: 50%;
+            margin-left: 5px;
+            font-size: 12px;
+        }
+
+/* ============================= */
+/* HERO */
+/* ============================= */
+
+.hero {
+    background:
+        linear-gradient(
+            120deg,
+            rgba(38,55,34,.94),
+            rgba(95,125,79,.88)
+        ),
+        url("https://images.unsplash.com/photo-1445116572660-236099ec97a0?w=1600");
+
+    background-position: center;
+    background-size: cover;
+
+    padding: 100px 20px;
+
+    text-align: center;
+    color: white;
+}
+
+.hero-etiqueta {
+    color: #e8d6b9;
+    letter-spacing: 4px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.hero h1 {
+    max-width: 850px;
+    margin: 20px auto;
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: clamp(38px, 6vw, 68px);
+
+    line-height: 1.15;
+}
+
+.hero-descripcion {
+    max-width: 580px;
+    margin: 20px auto 30px;
+
+    line-height: 1.9;
+
+    color: #f6f0e6;
+}
+
+.hero-boton {
+    display: inline-block;
+
+    background: #f5eee1;
+    color: var(--verde-oscuro);
+
+    text-decoration: none;
+
+    padding: 15px 26px;
+
+    border-radius: 30px;
+
+    font-weight: bold;
+
+    transition: .25s;
+}
+
+.hero-boton:hover {
+    background: var(--cafe);
+    color: white;
+
+    transform: translateY(-3px);
+}
+
+/* ============================= */
+/* FAVORITOS */
+/* ============================= */
+
+.favoritos {
+    padding: 45px 20px 10px;
+    text-align: center;
+}
+
+.favoritos-encabezado h2 {
+    color: var(--verde);
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: 38px;
+
+    margin: 12px 0;
+}
+
+.favoritos-encabezado p {
+    color: #777;
+}
+
+/* ============================= */
+/* CONTENEDOR */
+/* ============================= */
+
+.contenedor {
+    max-width: 1250px;
+
+    margin: auto;
+
+    padding: 30px 22px 50px;
+}
+
+/* ============================= */
+/* CATEGORÍAS */
+/* ============================= */
+
+.categorias {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+
+    margin: 20px 0 45px;
+
+    padding: 22px;
+
+    background: var(--crema-oscuro);
+
+    border: 2px solid #dfd5c5;
+
+    border-radius: 18px;
+}
+
+.categorias button {
+
+    border: 2px solid var(--cafe);
+
+    background: #fffdf8;
+
+    color: var(--verde-oscuro);
+
+    border-radius: 12px;
+
+    padding: 14px 20px;
+
+    font-weight: 700;
+
+    font-size: 14px;
+
+    box-shadow: 0 3px 0 #d7cbbb;
+
+    transition: .2s;
+
+    cursor: pointer;
+}
+
+.categorias button:hover {
+
+    background: #e2e8dc;
+
+    border-color: var(--verde);
+
+    transform: translateY(-2px);
+}
+
+.categorias button.activo {
+
+    background: var(--verde);
+
+    color: white;
+
+    border-color: var(--verde-oscuro);
+
+    box-shadow: 0 3px 0 #34482d;
+}
+
+/* ============================= */
+/* PRODUCTOS */
+/* ============================= */
+
+.productos {
+
+    display: grid;
+
+    grid-template-columns:
+    repeat(auto-fill, minmax(245px, 1fr));
+
+    gap: 25px;
+}
+
+/* TARJETA */
+
+.producto {
+
+    background: white;
+
+    border-radius: 17px;
+
+    overflow: hidden;
+
+    box-shadow: 0 5px 20px #0000000d;
+
+    transition: transform .2s;
+}
+
+.producto:hover {
+
+    transform: translateY(-6px);
+
+    box-shadow: 0 10px 25px #00000016;
+}
+
+.producto img {
+
+    width: 100%;
+
+    height: 190px;
+
+    object-fit: cover;
+
+    background: #eae5d9;
+}
+
+.producto-info {
+
+    padding: 20px;
+}
+
+.etiqueta {
+
+    color: var(--cafe);
+
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1.5px;
+
+    font-weight: bold;
+}
+
+.producto h3 {
+
+    font-family: 'Playfair Display', serif;
+
+    margin: 10px 0;
+
+    font-size: 21px;
+}
+
+.descripcion {
+
+    font-size: 13px;
+
+    color: #777;
+
+    min-height: 50px;
+
+    line-height: 1.6;
+}
+
+.producto-final {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-top: 17px;
+
+    gap: 8px;
+}
+
+.precio {
+
+    font-size: 21px;
+
+    font-weight: 700;
+
+    color: var(--verde);
+}
+
+.agregar {
+
+    border: 2px solid var(--verde-oscuro);
+
+    background: var(--verde);
+
+    color: white;
+
+    border-radius: 9px;
+
+    padding: 11px 14px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.agregar:hover {
+
+    background: var(--verde-oscuro);
+}
+
+/* ============================= */
+/* CARRITO */
+/* ============================= */
+
+.fondo-modal {
+
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    background: #0009;
+
+    z-index: 20;
+}
+
+.fondo-modal.visible {
+
+    display: block;
+}
+
+.panel {
+
+    position: fixed;
+
+    right: -450px;
+
+    top: 0;
+
+    width: min(430px,100%);
+
+    height: 100dvh;
+
+    background: white;
+
+    z-index: 21;
+
+    padding: 25px;
+
+    transition: right .3s;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+.panel.abierto {
+
+    right: 0;
+}
+
+.panel-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.panel h2 {
+
+    font-family: 'Playfair Display', serif;
+
+    color: var(--verde);
+}
+
+.cerrar {
+
+    background: #f1eee8;
+
+    border: none;
+
+    border-radius: 50%;
+
+    width: 35px;
+
+    height: 35px;
+
+    font-size: 20px;
+
+    cursor: pointer;
+}
+
+.items {
+
+    flex: 1;
+
+    overflow-y: auto;
+
+    margin-top: 20px;
+}
+
+.item {
+
+    display: flex;
+
+    gap: 13px;
+
+    padding: 15px 0;
+
+    border-bottom: 1px solid #eee;
+}
+
+.item img {
+
+    width: 70px;
+
+    height: 70px;
+
+    border-radius: 9px;
+
+    object-fit: cover;
+}
+
+.item-info {
+
+    flex: 1;
+}
+
+.item-info strong {
+
+    font-size: 14px;
+}
+
+.item-info p {
+
+    margin: 6px 0;
+
+    color: var(--verde);
+}
+
+.controles {
+
+    display: flex;
+
+    gap: 10px;
+
+    align-items: center;
+}
+
+.controles button {
+
+    background: #eeeae3;
+
+    border: none;
+
+    padding: 5px 10px;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+}
+
+.eliminar {
+
+    color: #a33;
+
+    background: none;
+
+    border: none;
+
+    font-size: 12px;
+
+    margin-top: 8px;
+
+    padding: 0;
+
+    cursor: pointer;
+}
+
+.resumen {
+
+    border-top: 1px solid #ddd;
+
+    padding-top: 20px;
+}
+
+.total {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    font-size: 23px;
+
+    font-weight: bold;
+
+    margin-bottom: 20px;
+}
+
+.boton-principal {
+
+    width: 100%;
+
+    background: var(--verde);
+
+    color: white;
+
+    border: none;
+
+    padding: 15px;
+
+    border-radius: 9px;
+
+    font-weight: bold;
+
+    margin-top: 10px;
+
+    cursor: pointer;
+}
+
+.boton-principal:hover {
+
+    background: var(--verde-oscuro);
+}
+
+.boton-principal:disabled {
+
+    opacity: .5;
+
+    cursor: not-allowed;
+}
+
+/* ============================= */
+/* FORMULARIO */
+/* ============================= */
+
+.modal {
+
+    display: none;
+
+    position: fixed;
+
+    z-index: 30;
+
+    inset: 0;
+
+    background: #000a;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 15px;
+
+    overflow-y: auto;
+}
+
+.modal.visible {
+
+    display: flex;
+}
+
+.modal-contenido {
+
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 18px;
+
+    width: 100%;
+
+    max-width: 480px;
+
+    max-height: 95dvh;
+
+    overflow-y: auto;
+}
+
+.modal-contenido h2 {
+
+    font-family: 'Playfair Display', serif;
+
+    color: var(--verde);
+}
+
+.campo {
+
+    margin: 15px 0;
+}
+
+.campo label {
+
+    display: block;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    margin-bottom: 7px;
+}
+
+.campo input,
+.campo textarea {
+
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 7px;
+
+    outline-color: var(--verde);
+}
+
+.opciones {
+
+    display: flex;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+
+    margin: 12px 0;
+}
+
+.opciones label {
+
+    font-size: 13px;
+}
+
+/* ============================= */
+/* TICKET */
+/* ============================= */
+
+.ticket {
+
+    background: white;
+
+    color: #222;
+
+    font-family: monospace;
+
+    max-width: 370px;
+
+    margin: auto;
+}
+
+.ticket h2 {
+
+    text-align: center;
+
+    font-family: 'Playfair Display', serif;
+}
+
+.ticket p {
+
+    line-height: 1.6;
+}
+
+.ticket table {
+
+    width: 100%;
+
+    font-size: 12px;
+
+    border-collapse: collapse;
+}
+
+.ticket th,
+.ticket td {
+
+    padding: 8px 3px;
+
+    text-align: left;
+
+    border-bottom: 1px dashed #aaa;
+}
+
+.ticket td:last-child,
+.ticket th:last-child {
+
+    text-align: right;
+}
+
+.ticket-total {
+
+    text-align: right;
+
+    font-size: 19px;
+
+    margin: 20px 0;
+}
+
+/* ============================= */
+/* FOOTER */
+/* ============================= */
+
+footer {
+
+    background: var(--oscuro);
+
+    color: white;
+
+    text-align: center;
+
+    padding: 40px 15px;
+
+    margin-top: 50px;
+}
+
+footer h2 {
+
+    font-family: 'Playfair Display', serif;
+}
+
+footer p {
+
+    font-size: 13px;
+
+    color: #d8dfd0;
+}
+
+/* ============================= */
+/* RESPONSIVE */
+/* ============================= */
+
+@media(max-width:600px) {
+
+    header {
+
+        padding: 15px;
+    }
+
+    .logo {
+
+        font-size: 20px;
+    }
+
+    .hero {
+
+        padding: 70px 18px;
+    }
+
+    .contenedor {
+
+        padding: 30px 15px;
+    }
+
+    .productos {
+
+        grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
+        gap: 12px;
+    }
+
+    .producto img {
+
+        height: 135px;
+    }
+
+    .producto-info {
+
+        padding: 12px;
+    }
+
+    .producto h3 {
+
+        font-size: 17px;
+    }
+
+    .producto-final {
+
+        flex-wrap: wrap;
+    }
+
+    .agregar {
+
+        width: 100%;
+    }
+
+    .categorias {
+
+        padding: 14px 8px;
+    }
+
+    .categorias button {
+
+        padding: 12px;
+
+        font-size: 12px;
+    }
+}
+
+/* ============================= */
+/* IMPRESIÓN DEL TICKET */
+/* ============================= */
+
+@media print {
+
+    body * {
+
+        visibility: hidden !important;
+    }
+
+    #modalTicket,
+    #modalTicket *,
+    #ticketContenido,
+    #ticketContenido * {
+
+        visibility: visible !important;
+    }
+
+    #modalTicket {
+
+        display: block !important;
+
+        position: absolute;
+
+        inset: 0;
+
+        background: white;
+
+        padding: 0;
+
+        overflow: visible;
+    }
+
+    #modalTicket .modal-contenido {
+
+        max-width: 80mm;
+
+        max-height: none;
+
+        overflow: visible;
+
+        padding: 0;
+
+        margin: auto;
+    }
+
+    .no-imprimir {
+
+        display: none !important;
+    }
+
+    @page {
+
+        size: auto;
+
+        margin: 8mm;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- ================================================== -->
+<!-- ENCABEZADO -->
+<!-- ================================================== -->
+
+<header>
+    <div class="logo">    Raíces & Aroma</div>
+
+    <nav>
+       <a href="index.html">Inicio</a>
+        <a href="nosotros (1).html">¿Quiénes somos?</a>
+        <a href="servidores.html">Servicios</a>
+        <a href="colaboradores.html">Colaboradores</a>
+        <a href="contactanos.html">Contacto</a>
+        <a href="menu.html">Menú</a>
+        <a href="tradiciones mexicanas.html">Tradiciones Mexicanas</a>
+    </nav>
+
+    <button class="boton-carrito" onclick="abrirCarrito()">
+        🛒 Carrito
+        <span class="contador" id="contador">0</span>
+    </button>
+</header>
+
+
+
+<!-- ================================================== -->
+<!-- PORTADA -->
+<!-- ================================================== -->
+
+<section class="hero">
+
+    <p class="hero-etiqueta">
+        ✦ SABORES QUE ENAMORAN ✦
+    </p>
+
+    <h1>
+        Los favoritos de Raíces y Aroma
+    </h1>
+
+    <p class="hero-descripcion">
+
+        Descubre los sabores que nuestros clientes
+        más disfrutan, preparados con ingredientes
+        frescos y mucho cariño.
+
+    </p>
+
+    <a
+        href="#productos-populares"
+        class="hero-boton">
+
+        Descubrir favoritos ↓
+
+    </a>
+
+</section>
+
+
+
+<!-- ================================================== -->
+<!-- ENCABEZADO DEL MENÚ -->
+<!-- ================================================== -->
+
+<section
+    class="favoritos"
+    id="productos-populares">
+
+    <div class="favoritos-encabezado">
+
+        <span class="etiqueta">
+            ✦ LOS MÁS PEDIDOS ✦
+        </span>
+
+        <h2>
+            Los favoritos de la casa
+        </h2>
+
+        <p>
+            Una selección especial de los sabores
+            más disfrutados en nuestra cafetería.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================================================== -->
+<!-- CONTENEDOR DE PRODUCTOS -->
+<!-- ================================================== -->
+
+<main class="contenedor">
+
+
+    <!-- ============================================== -->
+    <!-- CATEGORÍAS -->
+    <!-- ============================================== -->
+
+    <nav
+        class="categorias"
+        id="categorias">
+
+    </nav>
+
+
+    <!-- ============================================== -->
+    <!-- PRODUCTOS -->
+    <!-- ============================================== -->
+
+    <div
+        class="productos"
+        id="productos">
+
+    </div>
+
+
+</main>
+
+
+
+<!-- ================================================== -->
+<!-- FONDO DEL CARRITO -->
+<!-- ================================================== -->
+
+<div
+    class="fondo-modal"
+    id="fondo"
+    onclick="cerrarCarrito()">
+</div>
+
+
+
+<!-- ================================================== -->
+<!-- CARRITO -->
+<!-- ================================================== -->
+
+<aside
+    class="panel"
+    id="panel">
+
+
+    <div class="panel-header">
+
+        <h2>
+            🛒 Tu carrito
+        </h2>
+
+        <button
+            class="cerrar"
+            onclick="cerrarCarrito()">
+
+            ×
+
+        </button>
+
+    </div>
+
+
+    <div
+        class="items"
+        id="items">
+
+    </div>
+
+
+    <div class="resumen">
+
+
+        <div class="total">
+
+            <span>
+                Total:
+            </span>
+
+            <span id="total">
+                $0.00
+            </span>
+
+        </div>
+
+
+        <button
+            class="boton-principal"
+            id="btnFinalizar"
+            onclick="abrirFormulario()">
+
+            Finalizar pedido →
+
+        </button>
+
+
+    </div>
+
+</aside>
+
+
+
+<!-- ================================================== -->
+<!-- FORMULARIO -->
+<!-- ================================================== -->
+
+<div
+    class="modal"
+    id="modalFormulario">
+
+
+    <div class="modal-contenido">
+
+
+        <button
+            class="cerrar"
+            style="float:right"
+            onclick="cerrarFormulario()">
+
+            ×
+
+        </button>
+
+
+        <h2>
+            Finalizar pedido ☕
+        </h2>
+
+
+        <p>
+            Completa tus datos para generar tu ticket.
+        </p>
+
+
+        <form id="formulario">
+
+
+            <div class="campo">
+
+                <label>
+                    Nombre completo *
+                </label>
+
+                <input
+                    id="nombre"
+                    required
+                    maxlength="80"
+                    placeholder="Tu nombre completo">
+
+            </div>
+
+
+
+            <div class="campo">
+
+                <label>
+                    Teléfono *
+                </label>
+
+                <input
+                    id="telefono"
+                    type="tel"
+                    required
+                    pattern="[0-9]{10}"
+                    maxlength="10"
+                    placeholder="10 dígitos">
+
+            </div>
+
+
+
+            <div class="campo">
+
+                <label>
+                    Tipo de pedido
+                </label>
+
+
+                <div class="opciones">
+
+                    <label>
+
+                        <input
+                            type="radio"
+                            name="tipo"
+                            value="Para llevar"
+                            checked>
+
+                        Para llevar
+
+                    </label>
+
+
+                    <label>
+
+                        <input
+                            type="radio"
+                            name="tipo"
+                            value="Consumir en cafetería">
+
+                        Consumir en cafetería
+
+                    </label>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="campo">
+
+                <label>
+                    Método de pago
+                </label>
+
+
+                <div class="opciones">
+
+                    <label>
+
+                        <input
+                            type="radio"
+                            name="pago"
+                            value="Efectivo"
+                            checked>
+
+                        Efectivo
+
+                    </label>
+
+
+                    <label>
+
+                        <input
+                            type="radio"
+                            name="pago"
+                            value="Tarjeta">
+
+                        Tarjeta
+
+                    </label>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="campo">
+
+                <label>
+                    Indicaciones especiales
+                </label>
+
+                <textarea
+                    id="notas"
+                    rows="3"
+                    maxlength="250"
+                    placeholder="Ej. Sin azúcar, sin cebolla...">
+                </textarea>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="boton-principal">
+
+                Confirmar y generar ticket
+
+            </button>
+
+
+        </form>
+
+    </div>
+
+</div>
+
+
+
+<!-- ================================================== -->
+<!-- TICKET -->
+<!-- ================================================== -->
+
+<div
+    class="modal"
+    id="modalTicket">
+
+
+    <div class="modal-contenido">
+
+
+        <div
+            id="ticketContenido"
+            class="ticket">
+
+        </div>
+
+
+        <div class="no-imprimir">
+
+
+            <button
+                class="boton-principal"
+                onclick="window.print()">
+
+                🖨 Imprimir / Guardar como PDF
+
+            </button>
+
+
+            <button
+                class="boton-principal"
+                style="background:var(--cafe)"
+                onclick="nuevoPedido()">
+
+                Realizar otro pedido
+
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- ================================================== -->
+<!-- FOOTER -->
+<!-- ================================================== -->
+
+<footer>
+
+    <h2>
+        Raíces y Aroma ☕
+    </h2>
+
+    <p>
+        Donde la cultura se disfruta
+        y el arte cobra vida.
+    </p>
+
+    <p>
+        Hecho con amor, tradición
+        y sabor mexicano.
+    </p>
+
+</footer>
+
+
+
+<script>
+
+
+// =====================================================
+// =====================================================
+// PRODUCTOS
+// =====================================================
+// AQUÍ PUEDES AGREGAR TODOS LOS PRODUCTOS QUE QUIERAS.
+// =====================================================
+// IMPORTANTE:
+// Cada producto debe tener un ID DIFERENTE.
+// =====================================================
+
+
+const productos = [
+
+
+/* =====================================================
+   BEBIDAS CALIENTES
+   ===================================================== */
+
+{
+    id: 1,
+    nombre: "Café Americano",
+    precio: 40,
+    categoria: "Bebidas calientes",
+    descripcion: "Café recién preparado, intenso y aromático.",
+    imagen: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600"
+},
+
+{
+    id: 2,
+    nombre: "Capuchino",
+    precio: 55,
+    categoria: "Bebidas calientes",
+    descripcion: "Espresso con leche vaporizada y espuma cremosa.",
+    imagen: "https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?w=600"
+},
+
+{
+    id: 3,
+    nombre: "Chocolate caliente",
+    precio: 50,
+    categoria: "Bebidas calientes",
+    descripcion: "Chocolate tradicional de sabor reconfortante.",
+    imagen: "https://media.diariouno.com.ar/p/7a380f7343da54f7d6cfb5570a50dd69/adjuntos/298/imagenes/009/337/0009337985/1200x0/smart/chocolate-caliente-con-avena-1jpg.jpg"
+},
+
+{
+    id: 4,
+    nombre: "Café de olla",
+    precio: 48,
+    categoria: "Bebidas calientes",
+    descripcion: "Preparado con canela y piloncillo.",
+    imagen: "https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=600"
+},
+
+
+/* =====================================================
+   BEBIDAS FRÍAS
+   ===================================================== */
+
+{
+    id: 5,
+    nombre: "Frappé de café",
+    precio: 70,
+    categoria: "Bebidas frías",
+    descripcion: "Café helado con textura cremosa.",
+    imagen: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=600"
+},
+
+{
+    id: 6,
+    nombre: "Matcha frío",
+    precio: 75,
+    categoria: "Bebidas frías",
+    descripcion: "Té matcha servido con leche y hielo.",
+    imagen: "https://images.unsplash.com/photo-1515823064-d6e0c04616a7?w=600"
+},
+
+{
+    id: 7,
+    nombre: "Limonada natural",
+    precio: 45,
+    categoria: "Bebidas frías",
+    descripcion: "Refrescante limonada preparada al momento.",
+    imagen: "https://static.bainet.es/clip/bbddc81c-becc-476e-ab6b-b0f2de49388e_source-aspect-ratio_1600w_0.jpg"
+},
+
+{
+    id: 8,
+    nombre: "Té helado",
+    precio: 45,
+    categoria: "Bebidas frías",
+    descripcion: "Infusión fría, ligera y refrescante.",
+    imagen: "https://images.unsplash.com/photo-1544145945-f90425340c7e?w=600"
+},
+
+
+/* =====================================================
+   REPOSTERÍA
+   ===================================================== */
+
+{
+    id: 9,
+    nombre: "Croissant",
+    precio: 45,
+    categoria: "Repostería",
+    descripcion: "Pan hojaldrado, doradito y recién horneado.",
+    imagen: "https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=600"
+},
+
+{
+    id: 10,
+    nombre: "Rol de canela",
+    precio: 50,
+    categoria: "Repostería",
+    descripcion: "Pan suave con canela y glaseado.",
+    imagen: "https://images.unsplash.com/photo-1509365465985-25d11c17e812?w=600"
+},
+
+{
+    id: 11,
+    nombre: "Panqué de vainilla",
+    precio: 42,
+    categoria: "Repostería",
+    descripcion: "Esponjoso panqué artesanal.",
+    imagen: "https://images.unsplash.com/photo-1464305795204-6f5bbfc7fb81?w=600"
+},
+
+{
+    id: 12,
+    nombre: "Galletas artesanales",
+    precio: 35,
+    categoria: "Repostería",
+    descripcion: "Galletas horneadas con mucho cariño.",
+    imagen: "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=600"
+},
+
+
+/* =====================================================
+   POSTRES MEXICANOS
+   ===================================================== */
+
+{
+    id: 13,
+    nombre: "Arroz con leche",
+    precio: 45,
+    categoria: "Postres mexicanos",
+    descripcion: "Receta tradicional con canela.",
+    imagen: "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=600"
+},
+
+{
+    id: 14,
+    nombre: "Flan napolitano",
+    precio: 55,
+    categoria: "Postres mexicanos",
+    descripcion: "Flan cremoso con caramelo.",
+    imagen: "https://images.unsplash.com/photo-1551024506-0bccd828d307?w=600"
+},
+
+{
+    id: 15,
+    nombre: "Churros",
+    precio: 50,
+    categoria: "Postres mexicanos",
+    descripcion: "Crujientes, cubiertos de azúcar y canela.",
+    imagen: "https://images.unsplash.com/photo-1624374053855-39a5a1a41402?w=600"
+},
+
+{
+    id: 16,
+    nombre: "Pan de elote",
+    precio: 48,
+    categoria: "Postres mexicanos",
+    descripcion: "Suave postre tradicional de elote.",
+    imagen: "https://images.unsplash.com/photo-1484723091739-30a097e8f929?w=600"
+},
+
+
+/* =====================================================
+   DESAYUNOS MEXICANOS
+   ===================================================== */
+
+{
+    id: 17,
+    nombre: "Chilaquiles verdes",
+    precio: 95,
+    categoria: "Desayunos mexicanos",
+    descripcion: "Totopos con salsa verde, crema y queso.",
+    imagen: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600"
+},
+
+{
+    id: 18,
+    nombre: "Huevos a la mexicana",
+    precio: 90,
+    categoria: "Desayunos mexicanos",
+    descripcion: "Huevos con jitomate, cebolla y chile.",
+    imagen: "https://images.unsplash.com/photo-1525351484163-7529414344d8?w=600"
+},
+
+{
+    id: 19,
+    nombre: "Molletes",
+    precio: 80,
+    categoria: "Desayunos mexicanos",
+    descripcion: "Pan con frijoles, queso gratinado y pico de gallo.",
+    imagen: "https://tse3.mm.bing.net/th/id/OIP.ZcA5quL0L2WCUIc118eUoAHaF7?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+},
+
+{
+    id: 20,
+    nombre: "Enfrijoladas",
+    precio: 95,
+    categoria: "Desayunos mexicanos",
+    descripcion: "Tortillas bañadas en salsa de frijol.",
+    imagen: "https://images.unsplash.com/photo-1547592180-85f173990554?w=600"
+},
+
+
+/* =====================================================
+   COMIDA LIGERA
+   ===================================================== */
+
+{
+    id: 21,
+    nombre: "Sándwich de pollo",
+    precio: 85,
+    categoria: "Comida ligera",
+    descripcion: "Pollo, vegetales frescos y pan artesanal.",
+    imagen: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=600"
+},
+
+{
+    id: 22,
+    nombre: "Ensalada de la casa",
+    precio: 90,
+    categoria: "Comida ligera",
+    descripcion: "Mezcla fresca de vegetales de temporada.",
+    imagen: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600"
+},
+
+{
+    id: 23,
+    nombre: "Panini de queso",
+    precio: 85,
+    categoria: "Comida ligera",
+    descripcion: "Pan tostado con queso derretido.",
+    imagen: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=600"
+},
+
+{
+    id: 24,
+    nombre: "Baguette artesanal",
+    precio: 95,
+    categoria: "Comida ligera",
+    descripcion: "Pan crujiente con ingredientes frescos.",
+    imagen: "https://containerplaza.com.mx/wp-content/uploads/2021/02/Baguette-Noruego.png"
+}
+
+
+/* =====================================================
+   PARA AGREGAR MÁS PRODUCTOS:
+
+{
+    id: 25,
+    nombre: "NOMBRE DEL PRODUCTO",
+    precio: 60,
+    categoria: "Bebidas calientes",
+    descripcion: "Descripción del producto.",
+    imagen: "URL DE LA IMAGEN"
+},
+
+===================================================== */
+
+];
+
+
+// =====================================================
+// CATEGORÍAS
+// =====================================================
+
+const categorias = [
+
+    "Todos",
+
+    "Bebidas calientes",
+
+    "Bebidas frías",
+
+    "Repostería",
+
+    "Postres mexicanos",
+
+    "Desayunos mexicanos",
+
+    "Comida ligera"
+
+];
+
+
+// =====================================================
+// CARRITO
+// =====================================================
+
+const dinero = numero =>
+    "$" + numero.toFixed(2);
+
+
+let carrito = JSON.parse(
+    localStorage.getItem("carritoRaices") || "[]"
+);
+
+
+carrito = carrito.filter(item =>
+
+    productos.some(p => p.id === item.id) &&
+
+    Number.isInteger(item.cantidad) &&
+
+    item.cantidad > 0
+
+);
+
+
+// =====================================================
+// MOSTRAR CATEGORÍAS
+// =====================================================
+
+function mostrarCategorias() {
+
+    const nav =
+        document.getElementById("categorias");
+
+
+    categorias.forEach((categoria, index) => {
+
+
+        const boton =
+            document.createElement("button");
+
+
+        boton.textContent = categoria;
+
+
+        if(index === 0) {
+
+            boton.classList.add("activo");
+
+        }
+
+
+        boton.onclick = () => {
+
+
+            document
+            .querySelectorAll(".categorias button")
+            .forEach(b =>
+                b.classList.remove("activo")
+            );
+
+
+            boton.classList.add("activo");
+
+
+            mostrarProductos(categoria);
+
+        };
+
+
+        nav.appendChild(boton);
+
+    });
+
+}
+
+
+// =====================================================
+// MOSTRAR PRODUCTOS
+// =====================================================
+
+function mostrarProductos(categoria = "Todos") {
+
+
+    const contenedor =
+        document.getElementById("productos");
+
+
+    const filtrados =
+
+        categoria === "Todos"
+
+        ? productos
+
+        : productos.filter(
+            p => p.categoria === categoria
+        );
+
+
+    contenedor.innerHTML =
+
+        filtrados.map(p => `
+
+            <article class="producto">
+
+                <img
+                    src="${p.imagen}"
+                    alt="${p.nombre}"
+                    loading="lazy"
+                >
+
+                <div class="producto-info">
+
+                    <span class="etiqueta">
+                        ${p.categoria}
+                    </span>
+
+                    <h3>
+                        ${p.nombre}
+                    </h3>
+
+                    <p class="descripcion">
+                        ${p.descripcion}
+                    </p>
+
+                    <div class="producto-final">
+
+                        <span class="precio">
+                            ${dinero(p.precio)}
+                        </span>
+
+                        <button
+                            class="agregar"
+                            onclick="agregar(${p.id})">
+
+                            + Agregar
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        `).join("");
+
+}
+
+
+// =====================================================
+// GUARDAR CARRITO
+// =====================================================
+
+function guardar() {
+
+    localStorage.setItem(
+        "carritoRaices",
+        JSON.stringify(carrito)
+    );
+
+    actualizarCarrito();
+
+}
+
+
+// =====================================================
+// AGREGAR
+// =====================================================
+
+function agregar(id) {
+
+
+    const existe =
+        carrito.find(p => p.id === id);
+
+
+    if(existe) {
+
+        existe.cantidad++;
+
+    }
+
+    else {
+
+        carrito.push({
+            id: id,
+            cantidad: 1
+        });
+
+    }
+
+
+    guardar();
+
+
+    abrirCarrito();
+
+}
+
+
+// =====================================================
+// CAMBIAR CANTIDAD
+// =====================================================
+
+function cambiarCantidad(id, cambio) {
+
+
+    const item =
+        carrito.find(p => p.id === id);
+
+
+    if(!item) return;
+
+
+    item.cantidad += cambio;
+
+
+    if(item.cantidad <= 0) {
+
+        carrito =
+            carrito.filter(
+                p => p.id !== id
+            );
+
+    }
+
+
+    guardar();
+
+}
+
+
+// =====================================================
+// ELIMINAR
+// =====================================================
+
+function eliminar(id) {
+
+    carrito =
+        carrito.filter(
+            p => p.id !== id
+        );
+
+    guardar();
+
+}
+
+
+// =====================================================
+// TOTAL
+// =====================================================
+
+function calcularTotal() {
+
+
+    return carrito.reduce(
+        (total, item) => {
+
+
+            const producto =
+                productos.find(
+                    p => p.id === item.id
+                );
+
+
+            return total +
+                producto.precio *
+                item.cantidad;
+
+
+        }, 0
+    );
+
+}
+
+
+// =====================================================
+// ACTUALIZAR CARRITO
+// =====================================================
+
+function actualizarCarrito() {
+
+
+    const items =
+        document.getElementById("items");
+
+
+    const cantidad =
+        carrito.reduce(
+            (suma, item) =>
+                suma + item.cantidad,
+            0
+        );
+
+
+    document.getElementById(
+        "contador"
+    ).textContent = cantidad;
+
+
+    document.getElementById(
+        "total"
+    ).textContent =
+        dinero(calcularTotal());
+
+
+    document.getElementById(
+        "btnFinalizar"
+    ).disabled =
+        carrito.length === 0;
+
+
+    if(carrito.length === 0) {
+
+
+        items.innerHTML = `
+
+            <p
+                style="
+                text-align:center;
+                color:#888;
+                margin-top:50px">
+
+                ☕ Tu carrito está vacío.
+
+                <br><br>
+
+                ¡Agrega algo delicioso!
+
+            </p>
+
+        `;
+
+
+        return;
+
+    }
+
+
+    items.innerHTML =
+
+        carrito.map(item => {
+
+
+            const p =
+                productos.find(
+                    p => p.id === item.id
+                );
+
+
+            return `
+
+                <div class="item">
+
+                    <img
+                        src="${p.imagen}"
+                        alt="${p.nombre}"
+                    >
+
+                    <div class="item-info">
+
+                        <strong>
+                            ${p.nombre}
+                        </strong>
+
+                        <p>
+                            ${dinero(
+                                p.precio *
+                                item.cantidad
+                            )}
+                        </p>
+
+
+                        <div class="controles">
+
+                            <button
+                                onclick="
+                                cambiarCantidad(
+                                    ${p.id},-1
+                                )">
+
+                                −
+
+                            </button>
+
+
+                            <span>
+                                ${item.cantidad}
+                            </span>
+
+
+                            <button
+                                onclick="
+                                cambiarCantidad(
+                                    ${p.id},1
+                                )">
+
+                                +
+
+                            </button>
+
+                        </div>
+
+
+                        <button
+                            class="eliminar"
+                            onclick="
+                            eliminar(${p.id})">
+
+                            Eliminar producto
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            `;
+
+
+        }).join("");
+
+}
+
+
+// =====================================================
+// ABRIR CARRITO
+// =====================================================
+
+function abrirCarrito() {
+
+
+    document
+    .getElementById("panel")
+    .classList.add("abierto");
+
+
+    document
+    .getElementById("fondo")
+    .classList.add("visible");
+
+}
+
+
+// =====================================================
+// CERRAR CARRITO
+// =====================================================
+
+function cerrarCarrito() {
+
+
+    document
+    .getElementById("panel")
+    .classList.remove("abierto");
+
+
+    document
+    .getElementById("fondo")
+    .classList.remove("visible");
+
+}
+
+
+// =====================================================
+// FORMULARIO
+// =====================================================
+
+function abrirFormulario() {
+
+
+    if(carrito.length === 0)
+        return;
+
+
+    cerrarCarrito();
+
+
+    document
+    .getElementById("modalFormulario")
+    .classList.add("visible");
+
+}
+
+
+function cerrarFormulario() {
+
+
+    document
+    .getElementById("modalFormulario")
+    .classList.remove("visible");
+
+}
+
+
+// =====================================================
+// SEGURIDAD
+// =====================================================
+
+function escapar(texto) {
+
+
+    return String(texto)
+    .replace(/[&<>"']/g, caracter => ({
+
+        "&":"&amp;",
+
+        "<":"&lt;",
+
+        ">":"&gt;",
+
+        '"':"&quot;",
+
+        "'":"&#39;"
+
+    })[caracter]);
+
+}
+
+
+// =====================================================
+// GENERAR TICKET
+// =====================================================
+
+document
+.getElementById("formulario")
+.addEventListener(
+    "submit",
+    function(e) {
+
+
+        e.preventDefault();
+
+
+        if(carrito.length === 0)
+            return;
+
+
+        const nombre =
+            document
+            .getElementById("nombre")
+            .value
+            .trim();
+
+
+        const telefono =
+            document
+            .getElementById("telefono")
+            .value
+            .trim();
+
+
+        const notas =
+            document
+            .getElementById("notas")
+            .value
+            .trim();
+
+
+        if(
+            !nombre ||
+            !/^[0-9]{10}$/.test(telefono)
+        ) {
+
+            alert(
+                "Verifica tu nombre y teléfono."
+            );
+
+            return;
+
+        }
+
+
+        const tipo =
+            document
+            .querySelector(
+                'input[name="tipo"]:checked'
+            )
+            .value;
+
+
+        const pago =
+            document
+            .querySelector(
+                'input[name="pago"]:checked'
+            )
+            .value;
+
+
+        const fecha =
+            new Date();
+
+
+        const numero =
+            "RA-" +
+            fecha.getFullYear() +
+            String(
+                fecha.getMonth() + 1
+            ).padStart(2,"0") +
+            String(
+                fecha.getDate()
+            ).padStart(2,"0") +
+            "-" +
+            Date.now()
+            .toString(36)
+            .toUpperCase();
+
+
+        const filas =
+            carrito.map(item => {
+
+
+                const p =
+                    productos.find(
+                        p => p.id === item.id
+                    );
+
+
+                return `
+
+                    <tr>
+
+                        <td>
+                            ${item.cantidad}
+                        </td>
+
+                        <td>
+                            ${p.nombre}
+                        </td>
+
+                        <td>
+                            ${dinero(
+                                p.precio *
+                                item.cantidad
+                            )}
+                        </td>
+
+                    </tr>
+
+                `;
+
+
+            }).join("");
+
+
+        const total =
+            calcularTotal();
+
+
+        document
+        .getElementById("ticketContenido")
+        .innerHTML = `
+
+
+            <h2>
+                Raíces y Aroma
+            </h2>
+
+
+            <p style="text-align:center">
+
+                CAFETERÍA CULTURAL
+
+                <br>
+
+                Donde la cultura se disfruta
+                y el arte cobra vida.
+
+            </p>
+
+
+            <hr>
+
+
+            <p>
+
+                <strong>
+                    Pedido:
+                </strong>
+
+                ${numero}
+
+                <br>
+
+
+                <strong>
+                    Fecha:
+                </strong>
+
+                ${fecha.toLocaleString("es-MX")}
+
+                <br>
+
+
+                <strong>
+                    Cliente:
+                </strong>
+
+                ${escapar(nombre)}
+
+                <br>
+
+
+                <strong>
+                    Teléfono:
+                </strong>
+
+                ${escapar(telefono)}
+
+                <br>
+
+
+                <strong>
+                    Servicio:
+                </strong>
+
+                ${escapar(tipo)}
+
+                <br>
+
+
+                <strong>
+                    Pago:
+                </strong>
+
+                ${escapar(pago)}
+
+            </p>
+
+
+            <hr>
+
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Cant.
+                        </th>
+
+                        <th>
+                            Producto
+                        </th>
+
+                        <th>
+                            Importe
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                    ${filas}
+
+                </tbody>
+
+            </table>
+
+
+            <div class="ticket-total">
+
+                <strong>
+
+                    TOTAL:
+                    ${dinero(total)}
+
+                </strong>
+
+            </div>
+
+
+            ${
+                notas
+                ?
+                `
+                    <p>
+
+                        <strong>
+                            Indicaciones:
+                        </strong>
+
+                        <br>
+
+                        ${escapar(notas)}
+
+                    </p>
+                `
+                :
+                ""
+            }
+
+
+            <hr>
+
+
+            <p style="text-align:center">
+
+                ¡Gracias por tu preferencia!
+
+                <br>
+
+                Vuelve pronto ♡
+
+                <br><br>
+
+                Comprobante de pedido.
+
+                <br>
+
+                No es un comprobante fiscal.
+
+            </p>
+
+        `;
+
+
+        cerrarFormulario();
+
+
+        document
+        .getElementById("modalTicket")
+        .classList.add("visible");
+
+    }
+);
+
+
+// =====================================================
+// NUEVO PEDIDO
+// =====================================================
+
+function nuevoPedido() {
+
+
+    carrito = [];
+
+
+    guardar();
+
+
+    document
+    .getElementById("formulario")
+    .reset();
+
+
+    document
+    .getElementById("modalTicket")
+    .classList.remove("visible");
+
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+}
+
+
+// =====================================================
+// INICIAR
+// =====================================================
+
+mostrarCategorias();
+
+mostrarProductos();
+
+actualizarCarrito();
+
+
+</script>
+
+</body>
+</html>

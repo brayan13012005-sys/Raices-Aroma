@@ -1,0 +1,744 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Conoce al equipo de Raíces y Aroma.">
+<link rel="icon" type="image/png" href="imagenes/LogoR&A.png"/>
+<title>Raíces y Aroma | Colaboradores</title>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --verde:#5f7d4f;
+    --verde-oscuro:#405b36;
+    --cafe:#a6856a;
+    --crema:#faf7f0;
+    --crema-oscuro:#eee7da;
+    --oscuro:#303c2b;
+    --blanco:#fff;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    font-family:'DM Sans',sans-serif;
+    background:var(--crema);
+    color:var(--oscuro);
+}
+
+/* ENCABEZADO */
+
+header{
+    background:var(--verde);
+    color:white;
+    padding:17px 6%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    flex-wrap:wrap;
+    position:sticky;
+    top:0;
+    z-index:10;
+    box-shadow:0 3px 12px #00000018;
+}
+
+.logo{
+    font-family:'Playfair Display',serif;
+    font-size:26px;
+    font-weight:bold;
+    color:white;
+    text-decoration:none;
+    white-space:nowrap;
+}
+
+.logo em{
+    font-weight:400;
+}
+
+nav{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-size:13px;
+    transition:.2s;
+}
+
+nav a:hover{
+    color:#f0d8b9;
+}
+
+/* PORTADA */
+
+.hero{
+    padding:85px 20px;
+    text-align:center;
+    color:white;
+    background:
+    linear-gradient(120deg,rgba(38,55,34,.95),rgba(95,125,79,.88)),
+    url('https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=1600') center/cover;
+}
+
+.etiqueta{
+    color:var(--cafe);
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-weight:700;
+}
+
+.hero .etiqueta{
+    color:#ead9c2;
+}
+
+.hero h1{
+    font:clamp(40px,6vw,65px) 'Playfair Display',serif;
+    margin:15px 0;
+}
+
+.hero p:last-child{
+    max-width:680px;
+    margin:auto;
+    line-height:1.8;
+    color:#f6f0e6;
+}
+
+/* CONTENEDOR */
+
+.contenedor{
+    max-width:1120px;
+    margin:auto;
+    padding:65px 22px;
+}
+
+.intro{
+    text-align:center;
+    max-width:790px;
+    margin:0 auto 38px;
+}
+
+.intro h2{
+    font:clamp(30px,4vw,42px) 'Playfair Display',serif;
+    color:var(--verde);
+    margin:12px 0;
+}
+
+.intro p{
+    line-height:1.8;
+    color:#6e7168;
+}
+
+/* NUMERO DEL EQUIPO */
+
+.numero-equipo{
+    max-width:760px;
+    margin:0 auto 45px;
+    text-align:center;
+    background:var(--crema-oscuro);
+    border:1px solid #dfd5c5;
+    border-radius:20px;
+    padding:30px;
+}
+
+.numero-equipo .numero{
+    font:52px 'Playfair Display',serif;
+    color:var(--verde);
+    display:block;
+}
+
+.numero-equipo p{
+    margin:8px 0 0;
+    color:#656b5e;
+    line-height:1.7;
+}
+
+/* SIETE INTEGRANTES */
+
+.equipo-integrantes{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:22px;
+    margin:35px 0;
+}
+
+.integrante{
+    background:white;
+    border-radius:18px;
+    padding:27px 22px;
+    text-align:center;
+    box-shadow:0 5px 20px #0000000d;
+    border-bottom:4px solid var(--cafe);
+    transition:.3s;
+}
+
+.integrante:hover{
+    transform:translateY(-5px);
+    box-shadow:0 9px 25px #00000015;
+}
+
+.integrante .icono{
+    width:66px;
+    height:66px;
+    border-radius:50%;
+    display:grid;
+    place-items:center;
+    margin:0 auto 15px;
+    background:#e9eee4;
+    font-size:29px;
+}
+
+.integrante h3{
+    font:21px 'Playfair Display',serif;
+    color:var(--verde);
+    margin:12px 0;
+}
+
+.integrante p{
+    font-size:14px;
+    line-height:1.75;
+    color:#6e7168;
+    margin:0;
+}
+
+/* CAMPO DEL NOMBRE */
+
+.integrante input{
+    width:100%;
+    padding:12px;
+    border:1px solid #dfd5c5;
+    border-radius:9px;
+    margin:15px 0 10px;
+    font-family:'DM Sans',sans-serif;
+    font-size:13px;
+    outline:none;
+    transition:.2s;
+}
+
+.integrante input:focus{
+    border-color:var(--verde);
+    box-shadow:0 0 0 3px #5f7d4f20;
+}
+
+.integrante input::placeholder{
+    color:#a4a49b;
+}
+
+/* BOTON AGREGAR */
+
+.integrante button{
+    width:100%;
+    border:0;
+    border-radius:25px;
+    padding:12px;
+    background:var(--verde);
+    color:white;
+    font:700 13px 'DM Sans',sans-serif;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.integrante button:hover{
+    background:var(--verde-oscuro);
+    transform:translateY(-2px);
+}
+
+.nombre-guardado{
+    font-weight:700;
+    color:var(--verde)!important;
+    margin-top:15px!important;
+    overflow-wrap:anywhere;
+}
+
+/* TRABAJO EN EQUIPO */
+
+.trabajo{
+    margin-top:55px;
+    background:white;
+    border-radius:18px;
+    padding:32px;
+    box-shadow:0 5px 20px #0000000d;
+}
+
+.trabajo h2{
+    text-align:center;
+    color:var(--verde);
+    font:30px 'Playfair Display',serif;
+    margin-top:0;
+}
+
+.trabajo p{
+    line-height:1.8;
+    color:#666d60;
+    text-align:center;
+    max-width:850px;
+    margin:0 auto;
+}
+
+/* CIERRE */
+
+.cierre{
+    text-align:center;
+    background:#e9eee4;
+    padding:45px 20px;
+}
+
+.cierre h2{
+    color:var(--verde);
+    font:30px 'Playfair Display',serif;
+    margin:0 0 12px;
+}
+
+.cierre p{
+    color:#687061;
+    margin:0 auto 22px;
+    max-width:650px;
+    line-height:1.7;
+}
+
+.boton{
+    display:inline-block;
+    border:0;
+    border-radius:30px;
+    padding:14px 23px;
+    background:var(--verde);
+    color:white;
+    text-decoration:none;
+    font:700 14px 'DM Sans',sans-serif;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.boton:hover{
+    background:var(--verde-oscuro);
+    transform:translateY(-2px);
+}
+
+/* PIE DE PAGINA */
+
+footer{
+    background:var(--oscuro);
+    color:white;
+    text-align:center;
+    padding:38px 15px;
+}
+
+footer .logo{
+    display:inline-block;
+    font-size:24px;
+}
+
+footer p{
+    font-size:13px;
+    color:#d8dfd0;
+    line-height:1.7;
+}
+
+footer a.volver{
+    color:#ead9c2;
+    text-decoration:none;
+    font-size:13px;
+}
+
+/* DISEÑO RESPONSIVO */
+
+@media(max-width:800px){
+
+    .equipo-integrantes{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+    }
+
+}
+
+@media(max-width:560px){
+
+    header{
+        justify-content:center;
+        padding:15px;
+    }
+
+    nav{
+        gap:12px;
+    }
+
+    .contenedor{
+        padding:45px 16px;
+    }
+
+    .equipo-integrantes{
+        grid-template-columns:1fr;
+    }
+
+    .integrante{
+        padding:24px;
+    }
+
+}
+</style>
+</head>
+
+<body id="top">
+
+<header>
+
+    <a class="logo" href="raices ya roma.html">
+          Raíces & Aroma
+    </a>
+
+    <nav>
+     <a href="index.html">Inicio</a>
+<a href="nosotros (1).html">¿Quiénes somos?</a>
+<a href="servidores.html">Servicios</a>
+<a href="colaboradores.html">Colaboradores</a>
+<a href="contactanos.html">Contacto</a>
+<a href="menu.html">Menú</a>
+<a href="tradiciones mexicanas.html">Tradiciones Mexicanas</a>
+    </nav>
+
+</header>
+
+<main>
+
+<!-- PORTADA -->
+
+<section class="hero">
+
+    <p class="etiqueta">EL EQUIPO DETRÁS DE CADA TAZA</p>
+
+    <h1>
+        Personas que comparten<br>
+        una misma pasión.
+    </h1>
+
+    <p>
+        En Raíces y Aroma trabajamos en conjunto para ofrecer café,
+        cultura y momentos especiales en un ambiente acogedor.
+    </p>
+
+</section>
+
+<!-- INFORMACION DEL EQUIPO -->
+
+<section class="contenedor">
+
+    <div class="intro">
+
+        <p class="etiqueta">NUESTROS COLABORADORES</p>
+
+        <h2>Un equipo que da vida a Raíces y Aroma</h2>
+
+        <p>
+            Cada integrante aporta tiempo, ideas y esfuerzo para que
+            la cafetería funcione correctamente. Nos organizamos y
+            colaboramos para cuidar la calidad de nuestros productos
+            y la atención que recibe cada visitante.
+        </p>
+
+    </div>
+
+    <!-- TOTAL DE INTEGRANTES -->
+
+    <div class="numero-equipo">
+
+        <span class="numero">7</span>
+
+        <strong>
+            personas hicieron realidad nuestro proyecto
+        </strong>
+
+        <p>
+            Conoce los puestos y las responsabilidades que hicieron
+            posible Raíces y Aroma.
+        </p>
+
+    </div>
+
+    <!-- TARJETAS DE LOS SIETE INTEGRANTES -->
+
+    <div class="equipo-integrantes">
+
+        <!-- INTEGRANTE 1 -->
+
+        <article class="integrante">
+
+            <div class="icono">👑</div>
+
+            <h3>Dirección general</h3>
+
+            <p>
+                Encargado de organizar el proyecto, coordinar al
+                equipo y supervisar el desarrollo de la cafetería.
+            </p>
+
+             <p> <br>
+               <h3>Danna Alexia Poncelis Arzate</h3> 
+            </p>
+            <br>
+
+            <button onclick="window.location.href='CreditosDanna7.html'">
+                    CONOCEME
+            </button>
+
+            <p class="nombre-guardado" id="resultado1"></p>
+
+        </article>
+
+        <!-- INTEGRANTE 2 -->
+
+        <article class="integrante">
+
+            <div class="icono">📋</div>
+
+            <h3>Administración</h3>
+
+            <p>
+                Responsable de organizar los recursos, elaborar
+                presupuestos y llevar el control de las actividades.
+            </p>
+
+            <p> <br>
+               <h3>Karen Abril Espinoza Hernandez</h3> 
+            </p>
+            <br>
+
+            <button onclick="window.location.href='CreditosKaren6.html'">
+                    CONOCEME
+            </button>
+            <p class="nombre-guardado" id="resultado2"></p>
+
+        </article>
+
+        <!-- INTEGRANTE 3 -->
+
+        <article class="integrante">
+
+            <div class="icono">🎨</div>
+
+            <h3>Diseño e imagen</h3>
+
+            <p>
+                Encargado de crear la identidad visual, los diseños,
+                el logotipo y la presentación de la marca.
+            </p>
+
+           <p> <br>
+               <h3>Cristy Varey Estrada Díaz</h3> 
+            </p>
+            <br>
+
+            <button onclick="window.location.href='CreditosCristy5.html'">
+                    CONOCEME
+            </button>
+            <p class="nombre-guardado" id="resultado3"></p>
+
+        </article>
+
+        <!-- INTEGRANTE 4 -->
+
+        <article class="integrante">
+
+            <div class="icono">💻</div>
+
+            <h3>Desarrollo web</h3>
+
+            <p>
+                Responsable de diseñar y desarrollar la página web
+                de Raíces y Aroma, incluyendo sus diferentes apartados.
+            </p>
+
+           <p> <br>
+               <h3>Brayan Mendoza Hernández</h3> 
+            </p>
+            <br>
+
+            <button onclick="window.location.href='CreditosBrayitoo1.html'">
+                    CONOCEME
+            </button>
+
+            <p class="nombre-guardado" id="resultado4"></p>
+
+        </article>
+
+        <!-- INTEGRANTE 5 -->
+
+        <article class="integrante">
+
+            <div class="icono">☕</div>
+
+            <h3>Productos y menú</h3>
+
+            <p>
+                Encargado de organizar las bebidas, alimentos,
+                postres y productos que ofrece la cafetería.
+            </p>
+
+           <p> <br>
+               <h3>Luis Manuel Gonzalez Alcazar</h3> 
+            </p>
+            <br>
+
+            <button onclick="window.location.href='CreditosLuis4.html'">
+                    CONOCEME
+            </button>
+            <p class="nombre-guardado" id="resultado5"></p>
+
+        </article>
+
+        <!-- INTEGRANTE 6 -->
+
+        <article class="integrante">
+
+            <div class="icono">📢</div>
+
+            <h3>Marketing y publicidad</h3>
+
+            <p>
+                Responsable de proponer ideas de promoción,
+                contenido publicitario y estrategias para dar
+                a conocer la marca.
+            </p>
+
+            <p> <br>
+               <h3>Angel Manuel Moreno Avelino</h3> 
+            </p>
+            <br>
+
+            <button onclick="window.location.href='CreditosManu3.html'">
+                    CONOCEME
+            </button>
+
+            <p class="nombre-guardado" id="resultado6"></p>
+
+        </article>
+
+        <!-- INTEGRANTE 7 -->
+
+        <article class="integrante">
+
+            <div class="icono">🌿</div>
+
+            <h3>Investigación y organización</h3>
+
+            <p>
+                Encargado de investigar, reunir información y
+                apoyar en la elaboración y organización del proyecto.
+            </p>
+
+            <p> <br>
+               <h3>Aidee Vite Espinosa</h3> 
+            </p>
+            <br>
+
+            <button onclick="window.location.href='CreditosVite2.html'">
+                    CONOCEME
+            </button>
+
+            <p class="nombre-guardado" id="resultado7"></p>
+
+        </article>
+
+    </div>
+
+    <!-- TRABAJO EN EQUIPO -->
+
+    <div class="trabajo">
+
+        <h2>¿Cómo trabajamos?</h2>
+
+        <p>
+            La colaboración es fundamental para Raíces y Aroma.
+            Aunque cada área tiene actividades distintas, todas
+            se complementan. La comunicación, la responsabilidad,
+            el respeto y el apoyo mutuo nos permiten ofrecer una
+            experiencia agradable y mantener viva la esencia de
+            nuestra cafetería.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- CONTACTO -->
+
+<section class="cierre">
+
+    <h2>¿Tienes alguna pregunta?</h2>
+
+    <p>
+        Nos dará gusto atenderte y compartir más sobre nuestra
+        cafetería y las personas que forman parte de ella.
+    </p>
+
+    <a class="boton" href="contactanos.html">
+        Ir a Contáctanos →
+    </a>
+
+</section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <a class="logo" href="raices ya roma.html">
+        ☕ Raíces <em>y</em> Aroma
+    </a>
+
+    <p>
+        Donde la cultura se disfruta y el arte cobra vida.
+        <br>
+        © 2026 Raíces y Aroma · Hecho con cariño y aroma a café.
+    </p>
+
+    <a class="volver" href="#top">
+        Volver arriba ↑
+    </a>
+
+</footer>
+
+<!-- FUNCION PARA AGREGAR NOMBRES -->
+
+<script>
+
+function agregarIntegrante(numero){
+
+    let nombre = document
+        .getElementById("nombre" + numero)
+        .value.trim();
+
+    if(nombre === ""){
+
+        alert("Por favor, escribe el nombre del integrante.");
+
+        return;
+
+    }
+
+    document.getElementById("resultado" + numero).textContent =
+        "Integrante: " + nombre;
+
+    document.getElementById("nombre" + numero).value = "";
+
+}
+
+</script>
+
+</body>
+</html>

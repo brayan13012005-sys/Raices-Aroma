@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mercancía de Raíces y Aroma, una cafetería con accesorios únicos.">
+  <link rel="icon" type="image/png" href="imagenes/LogoR&A.png"/>
+  <title>Raíces y Aroma | Tienda</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--verde:#5f7d4f;--verde-oscuro:#405b36;--cafe:#a6856a;--crema:#faf7f0;--oscuro:#303c2b}
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{font-family:'DM Sans',sans-serif;background:var(--crema);color:var(--oscuro)}
+    .encabezado{position:sticky;top:0;z-index:100;background:var(--verde);color:#fff;padding:17px 6%;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;box-shadow:0 3px 12px #00000018}
+    .encabezado .logo{font-family:'Playfair Display',serif;font-size:26px;font-weight:bold;color:white;text-decoration:none;white-space:nowrap}
+    .encabezado .logo em{font-style:normal;color:#f0d8b9}
+    .encabezado nav{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap}
+    .encabezado nav a{color:white;text-decoration:none;font-size:13px;transition:.3s}
+    .encabezado nav a:hover{color:#f0d8b9}
+    .boton-carrito{border:2px solid #ffffff80;background:#ffffff18;color:white;padding:10px 17px;border-radius:25px;cursor:pointer;font:600 14px 'DM Sans',sans-serif;transition:.3s}
+    .boton-carrito:hover{background:white;color:var(--verde)}
+    .contador{display:inline-flex;justify-content:center;align-items:center;background:var(--cafe);color:white;width:23px;height:23px;border-radius:50%;margin-left:5px;font-size:12px}
+    .fondo-modal{display:none;position:fixed;inset:0;background:#0009;z-index:200}.fondo-modal.visible{display:block}
+    .panel{position:fixed;right:-450px;top:0;width:min(430px,100%);height:100dvh;background:white;z-index:201;padding:25px;transition:right .3s;display:flex;flex-direction:column;box-shadow:-5px 0 25px #0002}.panel.abierto{right:0}
+    .panel-header{display:flex;justify-content:space-between;align-items:center}.panel h2,.modal-contenido h2{font-family:'Playfair Display',serif;color:var(--verde)}
+    .cerrar{background:#f1eee8;border:0;border-radius:50%;width:35px;height:35px;font-size:20px;cursor:pointer}
+    .items{flex:1;overflow-y:auto;margin-top:20px}.item{display:flex;gap:13px;padding:15px 0;border-bottom:1px solid #eee}
+    .item img{width:70px;height:70px;border-radius:9px;object-fit:cover}.item-info{flex:1}.item-info strong{font-size:14px}.item-info p{margin:6px 0;color:var(--verde)}
+    .controles{display:flex;gap:10px;align-items:center}.controles button{background:#eeeae3;border:0;padding:5px 10px;border-radius:5px;cursor:pointer}
+    .eliminar{color:#a33;background:none;border:0;font-size:12px;margin-top:8px;padding:0;cursor:pointer}
+    .resumen{border-top:1px solid #ddd;padding-top:20px}.total{display:flex;justify-content:space-between;font-size:23px;font-weight:bold;margin-bottom:20px}
+    .boton-principal{width:100%;background:var(--verde);color:white;border:0;padding:15px;border-radius:9px;font-weight:bold;margin-top:10px;cursor:pointer}.boton-principal:hover{background:var(--verde-oscuro)}.boton-principal:disabled{opacity:.5;cursor:not-allowed}
+    .modal{display:none;position:fixed;z-index:300;inset:0;background:#000a;justify-content:center;align-items:center;padding:15px;overflow-y:auto}.modal.visible{display:flex}
+    .modal-contenido{background:white;padding:30px;border-radius:18px;width:100%;max-width:480px;max-height:95dvh;overflow-y:auto}
+    .campo{margin:15px 0}.campo label{display:block;font-size:13px;font-weight:bold;margin-bottom:7px}.campo input,.campo textarea{width:100%;padding:12px;border:1px solid #ddd;border-radius:7px;outline-color:var(--verde);font:inherit}
+    .opciones{display:flex;gap:15px;flex-wrap:wrap;margin:12px 0}.opciones label{font-size:13px;display:flex;gap:5px;align-items:center}
+    .ticket{background:white;color:#222;font-family:monospace;max-width:370px;margin:auto}.ticket h2{text-align:center;font-family:'Playfair Display',serif}.ticket p{line-height:1.6}.ticket table{width:100%;font-size:12px;border-collapse:collapse}.ticket th,.ticket td{padding:8px 3px;text-align:left;border-bottom:1px dashed #aaa}.ticket td:last-child,.ticket th:last-child{text-align:right}.ticket-total{text-align:right;font-size:19px;margin:20px 0}
+    .footer-raices{background:var(--oscuro);color:white;text-align:center;padding:40px 15px;margin-top:50px}.footer-raices h2{font-family:'Playfair Display',serif}.footer-raices p{font-size:13px;color:#d8dfd0}.footer-raices a{color:#f0d8b9;text-decoration:none}
+    @media(max-width:700px){.encabezado{padding:15px;justify-content:center}.encabezado .logo{font-size:21px}.encabezado nav{gap:12px}.encabezado nav a{font-size:12px}.boton-carrito{padding:9px 12px}}
+    @media print{body *{visibility:hidden!important}#modalTicket,#modalTicket *,#ticketContenido,#ticketContenido *{visibility:visible!important}#modalTicket{display:block!important;position:absolute;inset:0;background:white;padding:0;overflow:visible}#modalTicket .modal-contenido{max-width:80mm;max-height:none;overflow:visible;padding:0;margin:auto}.no-imprimir{display:none!important}@page{size:auto;margin:8mm}}
+  </style>
+</head>
+<body>
+  <!-- ENCABEZADO CON LA MISMA NAVEGACIÓN DEL RESTO DEL SITIO -->
+  <header class="encabezado">
+      Raíces & Aroma
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="nosotros (1).html">¿Quiénes somos?</a>
+        <a href="servidores.html">Servicios</a>
+        <a href="colaboradores.html">Colaboradores</a>
+        <a href="contactanos.html">Contacto</a>
+        <a href="menu.html">Menú</a>
+        <a href="tradiciones mexicanas.html">Tradiciones Mexicanas</a>
+    </nav>
+
+    <button class="boton-carrito" onclick="abrirCarrito()">🛒 Carrito <span class="contador" id="contador">0</span></button>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-texto">
+        <p class="etiqueta">CAFÉ · ESTILO · ESENCIA</p>
+        <h1>Lleva contigo<br><span>el aroma</span> de casa.</h1>
+        <p class="hero-descripcion">Detalles para quienes disfrutan el café, los momentos tranquilos y las cosas hechas con cariño.</p>
+        <a class="boton boton-claro" href="#productos">Explorar mercancía →</a>
+      </div>
+      <div class="hero-imagen">
+        <img src="imagenes/portadaa.jpg" alt="Ambiente de la cafetería Raíces y Aroma" class="imagen-portada">
+        <div class="sello">Hecho para<br>disfrutar ☕</div>
+      </div>
+    </section>
+
+    <section class="intro" id="nosotros">
+      <p class="etiqueta">MÁS QUE UNA CAFETERÍA</p>
+      <h2>Un poquito de <span>Raíces y Aroma</span>, donde vayas.</h2>
+      <p>Nuestra mercancía está inspirada en el calor de una buena taza de café: accesorios prácticos, diseños acogedores y detalles que te acompañan todos los días.</p>
+    </section>
+
+    <section class="productos" id="productos">
+      <div class="seccion-titulo"><div><p class="etiqueta">LA TIENDITA</p><h2>Encuentra tus favoritos</h2></div><p>Pequeños detalles, grandes momentos.</p></div>
+      <div class="rejilla-productos">
+        <article class="producto">
+          <div class="producto-foto foto-gorra"><img src="imagenes/cincor.jpg" alt="Gorra de Raíces y Aroma" class="imagen-producto"><span class="tag">Favorito</span></div>
+          <div class="producto-info"><div><h3>Gorra Raíces</h3><p>Estilo casual para todos los días.</p></div><strong>$250 MXN</strong></div>
+          <button class="boton-comprar" type="button" onclick="agregarMercancia(1)">Quiero la mía <span>＋</span></button>
+        </article>
+        <article class="producto">
+          <div class="producto-foto foto-termo"><img src="imagenes/cuatror.jpg" alt="Plumas de Raíces y Aroma" class="imagen-producto"></div>
+          <div class="producto-info"><div><h3>Plumas</h3><p>Un detalle para acompañar tus ideas.</p></div><strong>$320 MXN</strong></div>
+          <button class="boton-comprar" type="button" onclick="agregarMercancia(2)">Quiero las mías <span>＋</span></button>
+        </article>
+        <article class="producto">
+          <div class="producto-foto foto-bolsa"><img src="imagenes/dosr.jpg" alt="Bolsa de tela de Raíces y Aroma" class="imagen-producto"><span class="tag">Práctica</span></div>
+          <div class="producto-info"><div><h3>Bolsa de tela</h3><p>Ideal para tus compras y paseos.</p></div><strong>$180 MXN</strong></div>
+          <button class="boton-comprar" type="button" onclick="agregarMercancia(3)">Quiero la mía <span>＋</span></button>
+        </article>
+        <article class="producto">
+          <div class="producto-foto foto-taza"><img src="imagenes/tresr.jpg" alt="Taza de Raíces y Aroma" class="imagen-producto"></div>
+          <div class="producto-info"><div><h3>Taza cafetera</h3><p>Un momento rico empieza aquí.</p></div><strong>$150 MXN</strong></div>
+          <button class="boton-comprar" type="button" onclick="agregarMercancia(4)">Quiero la mía <span>＋</span></button>
+        </article>
+      </div>
+      <p class="nota-precios"></p>
+    </section>
+
+    <section class="frase"><span class="comillas">“</span><p>Que nunca te falte café, ni razones para volver a tus raíces.</p><span class="firma">— Raíces y Aroma</span></section>
+    <section class="contacto" id="contacto">
+      <div><p class="etiqueta">¿TE GUSTÓ ALGO?</p><h2>Tu próximo favorito<br>está a un mensaje.</h2><p>Escríbenos para consultar disponibilidad, colores y formas de entrega.</p></div>
+      <a class="boton boton-claro" href="https://wa.me/RaicesyAroma" target="_blank" rel="noopener noreferrer">Pedir por WhatsApp ↗</a>
+    </section>
+  </main>
+
+  <!-- CARRITO LATERAL -->
+  <div class="fondo-modal" id="fondo" onclick="cerrarCarrito()"></div>
+  <aside class="panel" id="panel">
+    <div class="panel-header"><h2>🛒 Tu carrito</h2><button class="cerrar" onclick="cerrarCarrito()">×</button></div>
+    <div class="items" id="items"></div>
+    <div class="resumen"><div class="total"><span>Total:</span><span id="total">$0.00</span></div><button class="boton-principal" id="btnFinalizar" onclick="abrirFormulario()">Finalizar pedido →</button></div>
+  </aside>
+
+  <!-- DATOS PARA EL PEDIDO -->
+  <div class="modal" id="modalFormulario">
+    <div class="modal-contenido">
+      <button class="cerrar" style="float:right" onclick="cerrarFormulario()">×</button>
+      <h2>Finalizar pedido ☕</h2><p>Completa tus datos para generar tu ticket.</p>
+      <form id="formulario">
+        <div class="campo"><label for="nombre">Nombre completo *</label><input id="nombre" required maxlength="80" placeholder="Tu nombre completo"></div>
+        <div class="campo"><label for="telefono">Teléfono *</label><input id="telefono" type="tel" required pattern="[0-9]{10}" maxlength="10" placeholder="10 dígitos"></div>
+        <div class="campo"><label>Forma de entrega</label><div class="opciones"><label><input type="radio" name="entrega" value="Recoger en cafetería" checked> Recoger en cafetería</label><label><input type="radio" name="entrega" value="Consultar entrega"> Consultar entrega</label></div></div>
+        <div class="campo"><label for="notas">Indicaciones especiales</label><textarea id="notas" rows="3" maxlength="250" placeholder="Colores, cantidades u otra indicación..."></textarea></div>
+        <button type="submit" class="boton-principal">Confirmar y generar ticket</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- TICKET -->
+  <div class="modal" id="modalTicket"><div class="modal-contenido"><div id="ticketContenido" class="ticket"></div><div class="no-imprimir"><button class="boton-principal" onclick="window.print()">🖨 Imprimir / Guardar como PDF</button><button class="boton-principal" style="background:var(--cafe)" onclick="nuevoPedido()">Realizar otro pedido</button></div></div></div>
+
+  <!-- PIE DE PÁGINA IGUAL AL DE LA PÁGINA MENÚ -->
+  <footer class="footer-raices">
+    <h2>Raíces y Aroma ☕</h2>
+    <p>Donde la cultura se disfruta<br>y el arte cobra vida.</p>
+    <p>Hecho con amor, tradición<br>y sabor mexicano.</p>
+    <a href="#inicio">Volver al inicio ↑</a>
+  </footer>
+
+  <script>
+    // Productos de la tienda. El carrito de mercancía usa una clave propia
+    // para no mezclarse con los productos de comida y bebidas del menú.
+    const mercancia = [
+      {id:1,nombre:'Gorra Raíces',precio:250,imagen:'imagenes/cincor.jpg'},
+      {id:2,nombre:'Plumas',precio:320,imagen:'imagenes/cuatror.jpg'},
+      {id:3,nombre:'Bolsa de tela',precio:180,imagen:'imagenes/dosr.jpg'},
+      {id:4,nombre:'Taza cafetera',precio:150,imagen:'imagenes/tresr.jpg'}
+    ];
+    const CLAVE_CARRITO = 'carritoMercanciaRaices';
+    const dinero = n => '$' + n.toFixed(2) + ' MXN';
+    let carrito = JSON.parse(localStorage.getItem(CLAVE_CARRITO) || '[]');
+    carrito = carrito.filter(item => mercancia.some(p => p.id === item.id) && Number.isInteger(item.cantidad) && item.cantidad > 0);
+
+    function guardarCarrito(){localStorage.setItem(CLAVE_CARRITO,JSON.stringify(carrito));actualizarCarrito();}
+    function agregarMercancia(id){const item=carrito.find(p=>p.id===id);if(item)item.cantidad++;else carrito.push({id,cantidad:1});guardarCarrito();abrirCarrito();}
+    function cambiarCantidad(id,cambio){const item=carrito.find(p=>p.id===id);if(!item)return;item.cantidad+=cambio;if(item.cantidad<=0)carrito=carrito.filter(p=>p.id!==id);guardarCarrito();}
+    function eliminarMercancia(id){carrito=carrito.filter(p=>p.id!==id);guardarCarrito();}
+    function calcularTotal(){return carrito.reduce((suma,item)=>{const p=mercancia.find(x=>x.id===item.id);return suma+(p?p.precio*item.cantidad:0);},0);}
+    function actualizarCarrito(){
+      const cantidad=carrito.reduce((suma,item)=>suma+item.cantidad,0);
+      document.getElementById('contador').textContent=cantidad;
+      document.getElementById('total').textContent=dinero(calcularTotal());
+      document.getElementById('btnFinalizar').disabled=carrito.length===0;
+      const contenedor=document.getElementById('items');
+      if(!carrito.length){contenedor.innerHTML='<p style="text-align:center;color:#888;margin-top:50px">☕ Tu carrito está vacío.<br><br>¡Agrega algún detalle de la tiendita!</p>';return;}
+      contenedor.innerHTML=carrito.map(item=>{const p=mercancia.find(x=>x.id===item.id);return `<div class="item"><img src="${p.imagen}" alt="${p.nombre}"><div class="item-info"><strong>${p.nombre}</strong><p>${dinero(p.precio*item.cantidad)}</p><div class="controles"><button onclick="cambiarCantidad(${p.id},-1)">−</button><span>${item.cantidad}</span><button onclick="cambiarCantidad(${p.id},1)">+</button></div><button class="eliminar" onclick="eliminarMercancia(${p.id})">Eliminar producto</button></div></div>`;}).join('');
+    }
+    function abrirCarrito(){document.getElementById('panel').classList.add('abierto');document.getElementById('fondo').classList.add('visible');}
+    function cerrarCarrito(){document.getElementById('panel').classList.remove('abierto');document.getElementById('fondo').classList.remove('visible');}
+    function abrirFormulario(){if(!carrito.length)return;cerrarCarrito();document.getElementById('modalFormulario').classList.add('visible');}
+    function cerrarFormulario(){document.getElementById('modalFormulario').classList.remove('visible');}
+    document.getElementById('formulario').addEventListener('submit',function(e){
+      e.preventDefault();
+      const nombre=document.getElementById('nombre').value.trim();
+      const telefono=document.getElementById('telefono').value.trim();
+      const entrega=document.querySelector('input[name="entrega"]:checked').value;
+      const notas=document.getElementById('notas').value.trim();
+      const filas=carrito.map(item=>{const p=mercancia.find(x=>x.id===item.id);return `<tr><td>${p.nombre} x${item.cantidad}</td><td>${dinero(p.precio*item.cantidad)}</td></tr>`;}).join('');
+      document.getElementById('ticketContenido').innerHTML=`<h2>Raíces y Aroma ☕</h2><p style="text-align:center">Mercancía · Gracias por tu compra</p><hr><p><strong>Cliente:</strong> ${nombre}<br><strong>Teléfono:</strong> ${telefono}<br><strong>Entrega:</strong> ${entrega}<br><strong>Fecha:</strong> ${new Date().toLocaleString('es-MX')}</p><table><thead><tr><th>Producto</th><th>Total</th></tr></thead><tbody>${filas}</tbody></table><div class="ticket-total"><strong>Total: ${dinero(calcularTotal())}</strong></div><p><strong>Indicaciones:</strong> ${notas||'Ninguna'}</p><p style="text-align:center">¡Gracias por apoyar a Raíces y Aroma!</p>`;
+      cerrarFormulario();document.getElementById('modalTicket').classList.add('visible');
+    });
+    function nuevoPedido(){carrito=[];guardarCarrito();document.getElementById('modalTicket').classList.remove('visible');document.getElementById('formulario').reset();document.getElementById('inicio').scrollIntoView({behavior:'smooth'});}
+    actualizarCarrito();
+  </script>
+</body>
+</html>

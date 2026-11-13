@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="imagenes/LogoR&A.png"/>
+<title>Raíces y Aroma | Quiénes somos</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--verde:#5f7d4f;--verde-oscuro:#405b36;--cafe:#a6856a;--crema:#faf7f0;--crema-oscuro:#eee7da;--oscuro:#303c2b;--blanco:#fff}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:100px}
+body{font-family:'DM Sans',sans-serif;background:var(--crema);color:var(--oscuro);line-height:1.7}
+header{background:var(--verde);color:white;padding:17px 6%;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;position:sticky;top:0;z-index:100;box-shadow:0 3px 12px #00000018}
+.logo{font-family:'Playfair Display',serif;font-size:26px;font-weight:bold;white-space:nowrap}
+nav{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap}
+nav a{color:white;text-decoration:none;font-size:13px;transition:.3s}
+nav a:hover,nav a.activo{color:#f0d8b9}
+.header-boton{border:2px solid #ffffff80;background:#ffffff18;color:white;padding:10px 17px;border-radius:25px;cursor:pointer;font-family:inherit;font-size:14px;font-weight:600;text-decoration:none;transition:.3s}
+.header-boton:hover{background:white;color:var(--verde)}
+.hero{min-height:440px;background:linear-gradient(120deg,rgba(38,55,34,.93),rgba(95,125,79,.82)),url('https://images.unsplash.com/photo-1445116572660-236099ec97a0?w=1600');background-position:center;background-size:cover;display:flex;align-items:center;justify-content:center;text-align:center;color:white;padding:85px 20px}
+.hero-contenido{max-width:850px}.hero-etiqueta{color:#e8d6b9;letter-spacing:4px;font-size:12px;font-weight:bold;text-transform:uppercase}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(38px,6vw,66px);line-height:1.15;margin:20px auto}
+.hero p{max-width:700px;margin:0 auto 28px;line-height:1.9;color:#f6f0e6;font-size:15px}
+.boton{display:inline-block;background:#f5eee1;color:var(--verde-oscuro);text-decoration:none;padding:13px 25px;border-radius:30px;font-weight:bold;font-size:14px;transition:.25s}
+.boton:hover{background:var(--cafe);color:white;transform:translateY(-3px)}
+.seccion{max-width:1200px;margin:auto;padding:75px 24px}
+.encabezado{text-align:center;max-width:780px;margin:0 auto 38px}
+.etiqueta{color:var(--cafe);font-size:11px;text-transform:uppercase;letter-spacing:3px;font-weight:700}
+h2{font-family:'Playfair Display',serif;color:var(--verde);font-size:clamp(29px,4vw,40px);line-height:1.2;margin:12px 0 16px}
+.encabezado p,.texto-largo{color:#6e6b61;font-size:14px;line-height:2}
+.intro-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:45px;align-items:center}
+.intro-texto h2{margin-top:10px}.intro-texto p{color:#6e6b61;font-size:14px;line-height:2;margin:14px 0}
+.imagen-cafe{min-height:360px;border-radius:20px;background:linear-gradient(#00000010,#00000010),url('https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=1100');background-size:cover;background-position:center;box-shadow:0 8px 25px #00000012}
+.historia{background:var(--crema-oscuro)}
+.historia-contenido{max-width:900px;margin:auto;text-align:center;padding:72px 24px}
+.historia-contenido p{color:#66645b;font-size:14px;line-height:2;margin-top:15px}
+.tarjetas{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:35px}
+.tarjeta{background:white;border-radius:17px;padding:30px 25px;box-shadow:0 5px 20px #0000000b;border:1px solid #eee8dc;transition:.25s}
+.tarjeta:hover{transform:translateY(-5px);box-shadow:0 10px 25px #00000012}
+.icono{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:#e9eee4;color:var(--verde);font-size:25px;margin-bottom:17px}
+.tarjeta h3{font-family:'Playfair Display',serif;color:var(--verde);font-size:22px;margin-bottom:10px}
+.tarjeta p{font-size:13px;color:#716e65;line-height:1.9}
+.valores{background:var(--verde);color:white;padding:72px 24px}
+.valores .encabezado h2,.valores .encabezado p{color:white}.valores .etiqueta{color:#e8d6b9}
+.valores .tarjeta{background:#ffffff;color:var(--oscuro);border:0}
+.valores-grid{max-width:1200px;margin:auto}
+.objetivos{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:30px}
+.objetivo{display:flex;gap:15px;align-items:flex-start;background:white;padding:20px;border-radius:13px;box-shadow:0 4px 15px #00000008}
+.numero{flex:0 0 35px;height:35px;border-radius:50%;background:var(--crema-oscuro);color:var(--verde);display:grid;place-items:center;font-weight:700}
+.objetivo p{font-size:13px;color:#6e6b61;line-height:1.8}
+.objetivo strong{display:block;color:var(--verde-oscuro);font-size:14px;margin-bottom:3px}
+.servicios{background:#f0ece2}
+.servicios .tarjeta{border-top:4px solid var(--cafe)}
+.compromiso{max-width:1050px;margin:70px auto;padding:48px 35px;border-radius:20px;background:var(--verde);color:white;text-align:center}
+.compromiso h2{color:white}.compromiso p{max-width:760px;margin:0 auto 25px;color:#f1f0e9;font-size:14px;line-height:1.9}
+.compromiso .boton{background:white;color:var(--verde)}
+footer{background:var(--oscuro);color:white;text-align:center;padding:38px 18px;margin-top:30px}
+footer strong{font-family:'Playfair Display',serif;font-size:22px}footer p{font-size:13px;color:#d8dfd0;margin-top:6px}
+@media(max-width:800px){header{justify-content:center}nav{gap:14px}.intro-grid{grid-template-columns:1fr}.imagen-cafe{min-height:280px}.tarjetas{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){header{padding:15px}.logo{font-size:23px}nav{gap:10px}nav a{font-size:12px}.header-boton{padding:9px 13px;font-size:12px}.hero{min-height:390px;padding:65px 18px}.seccion{padding:55px 18px}.tarjetas,.objetivos{grid-template-columns:1fr}.tarjeta{padding:25px 21px}.compromiso{margin:45px 16px;padding:35px 22px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">    Raíces & Aroma</div>
+  <nav aria-label="Navegación principal">
+     <a href="index.html">Inicio</a>
+        <a href="nosotros (1).html">¿Quiénes somos?</a>
+        <a href="servidores.html">Servicios</a>
+        <a href="colaboradores.html">Colaboradores</a>
+        <a href="contactanos.html">Contacto</a>
+        <a href="menu.html">Menú</a>
+        <a href="tradiciones mexicanas.html">Tradiciones Mexicanas</a>
+  </nav>
+  <a class="header-boton" href="menu.html">Ver menú</a>
+</header>
+<main>
+<section class="hero">
+  <div class="hero-contenido">
+    <span class="hero-etiqueta">Nuestra esencia · Café · Arte · Cultura</span>
+    <h1>Conoce Raíces y Aroma</h1>
+    <p>Somos una propuesta de cafetería que reúne el sabor del café, la riqueza de la cultura mexicana y la expresión del arte en un espacio pensado para compartir, descubrir y disfrutar.</p>
+    <a class="boton" href="#quienes-somos">Descubre nuestra historia</a>
+  </div>
+</section>
+<section class="seccion" id="quienes-somos">
+  <div class="intro-grid">
+    <div class="intro-texto">
+      <span class="etiqueta">Quiénes somos</span>
+      <h2>Más que una cafetería, un punto de encuentro</h2>
+      <p>Raíces y Aroma es una cafetería inspirada en la identidad mexicana, donde buscamos combinar bebidas y alimentos agradables con un ambiente que destaque nuestras tradiciones, colores, expresiones artísticas y formas de convivencia.</p>
+      <p>Nuestro propósito es ofrecer un lugar cómodo y cercano para que estudiantes, familias, trabajadores, visitantes y amantes del café puedan reunirse, conversar, descansar y disfrutar de una experiencia diferente.</p>
+      <p>Cuidamos cada parte de la experiencia: la atención, la presentación de nuestros productos, la limpieza, el ambiente y la calidad del servicio.</p>
+    </div>
+    <div class="imagen-cafe" role="img" aria-label="Interior cálido de una cafetería"></div>
+  </div>
+</section>
+<section class="historia" id="historia">
+  <div class="historia-contenido">
+    <span class="etiqueta">Nuestro origen</span>
+    <h2>La idea detrás de Raíces y Aroma</h2>
+    <p>Raíces y Aroma nace de la idea de crear una cafetería que no solo ofrezca café y alimentos, sino que también permita disfrutar y reconocer elementos de la cultura mexicana. El nombre representa dos aspectos importantes de nuestra propuesta: las raíces, que hacen referencia a nuestras tradiciones e identidad, y el aroma, que recuerda la experiencia cálida y agradable de compartir una taza de café.</p>
+    <p>Queremos que cada visita sea una oportunidad para disfrutar sabores, conocer expresiones culturales y sentirse parte de una comunidad.</p>
+  </div>
+</section>
+<section class="seccion" id="mision-vision">
+  <div class="encabezado"><span class="etiqueta">Nuestra dirección</span><h2>Misión y visión</h2><p>Lo que hacemos hoy y el camino que queremos construir para el futuro.</p></div>
+  <div class="tarjetas">
+    <article class="tarjeta"><div class="icono">☕</div><h3>Misión</h3><p>Ofrecer bebidas y alimentos de calidad en un espacio acogedor que integre el café, el arte y la cultura mexicana. Buscamos brindar una atención amable, crear momentos agradables y promover la convivencia, haciendo que cada persona se sienta bienvenida.</p></article>
+    <article class="tarjeta"><div class="icono">🌿</div><h3>Visión</h3><p>Ser una cafetería reconocida por crear experiencias únicas que integren la cultura mexicana, el café y el arte, convirtiéndonos en un punto de encuentro para la comunidad y en un espacio que inspire creatividad, tradición y convivencia.</p></article>
+    <article class="tarjeta"><div class="icono">🤎</div><h3>Propósito</h3><p>Conectar a las personas mediante los sabores, las tradiciones y el arte, ofreciendo un lugar donde puedan disfrutar de algo rico, compartir tiempo y acercarse a la cultura mexicana.</p></article>
+  </div>
+</section>
+<section class="valores" id="valores">
+ <div class="valores-grid">
+  <div class="encabezado"><span class="etiqueta">Lo que nos representa</span><h2>Nuestros valores</h2><p>Principios que orientan nuestras decisiones y la forma en que atendemos a cada visitante.</p></div>
+  <div class="tarjetas">
+   <article class="tarjeta"><div class="icono">♡</div><h3>Amabilidad</h3><p>Tratamos a cada persona con respeto, atención y disposición para ayudar.</p></article>
+   <article class="tarjeta"><div class="icono">✿</div><h3>Identidad cultural</h3><p>Valoramos las tradiciones, los sabores y las expresiones artísticas mexicanas.</p></article>
+   <article class="tarjeta"><div class="icono">✦</div><h3>Creatividad</h3><p>Buscamos ofrecer detalles y experiencias que hagan especial cada visita.</p></article>
+   <article class="tarjeta"><div class="icono">✓</div><h3>Calidad</h3><p>Procuramos cuidar la preparación, presentación y servicio de nuestros productos.</p></article>
+   <article class="tarjeta"><div class="icono">♧</div><h3>Responsabilidad</h3><p>Trabajamos con orden, higiene y compromiso con nuestros clientes y el entorno.</p></article>
+   <article class="tarjeta"><div class="icono">◎</div><h3>Convivencia</h3><p>Promovemos un ambiente agradable, inclusivo y respetuoso para todos.</p></article>
+  </div>
+ </div>
+</section>
+<section class="seccion" id="objetivos">
+ <div class="encabezado"><span class="etiqueta">Lo que queremos lograr</span><h2>Objetivos de la empresa</h2><p>Metas que nos ayudan a mantener una propuesta clara y a mejorar continuamente.</p></div>
+ <div class="objetivos">
+  <div class="objetivo"><span class="numero">1</span><p><strong>Ofrecer productos de calidad</strong>Preparar bebidas y alimentos con atención a su sabor, presentación y frescura.</p></div>
+  <div class="objetivo"><span class="numero">2</span><p><strong>Brindar buena atención</strong>Escuchar a nuestros clientes y atenderlos con amabilidad y respeto.</p></div>
+  <div class="objetivo"><span class="numero">3</span><p><strong>Promover la cultura mexicana</strong>Integrar elementos culturales y artísticos en el ambiente y en la experiencia de la cafetería.</p></div>
+  <div class="objetivo"><span class="numero">4</span><p><strong>Crear un espacio agradable</strong>Mantener un establecimiento limpio, cómodo, ordenado y adecuado para convivir.</p></div>
+  <div class="objetivo"><span class="numero">5</span><p><strong>Fomentar la preferencia de los clientes</strong>Construir relaciones de confianza mediante productos y servicio consistentes.</p></div>
+  <div class="objetivo"><span class="numero">6</span><p><strong>Mejorar continuamente</strong>Tomar en cuenta opiniones y sugerencias para actualizar nuestros productos y procesos.</p></div>
+ </div>
+</section>
+<section class="servicios" id="servicios">
+ <div class="seccion">
+  <div class="encabezado"><span class="etiqueta">Nuestra propuesta</span><h2>¿Qué ofrecemos?</h2><p>Una experiencia que reúne alimentos, bebidas y un ambiente inspirado en nuestras raíces.</p></div>
+  <div class="tarjetas">
+   <article class="tarjeta"><div class="icono">☕</div><h3>Bebidas</h3><p>Opciones calientes y frías para distintos gustos, desde café hasta bebidas refrescantes.</p></article>
+   <article class="tarjeta"><div class="icono">🍰</div><h3>Alimentos y postres</h3><p>Repostería, postres mexicanos, desayunos y comida ligera para acompañar cada momento.</p></article>
+   <article class="tarjeta"><div class="icono">🎨</div><h3>Ambiente cultural</h3><p>Un espacio con inspiración mexicana, detalles artísticos y un entorno para conversar y disfrutar.</p></article>
+  </div>
+ </div>
+</section>
+<section class="seccion" id="colaboradores">
+ <div class="encabezado"><span class="etiqueta">Nuestro equipo</span><h2>Colaboradores</h2><p>Raíces y Aroma se construye con el trabajo coordinado de las personas que hacen posible cada visita. Cada función contribuye a mantener la calidad y el buen funcionamiento de la cafetería.</p></div>
+ <div class="tarjetas">
+  <article class="tarjeta"><div class="icono">🧑‍🍳</div><h3>Preparación de alimentos y bebidas</h3><p>Se encarga de preparar los productos siguiendo las indicaciones de higiene, calidad y presentación establecidas.</p></article>
+  <article class="tarjeta"><div class="icono">🤝</div><h3>Atención al cliente</h3><p>Recibe a los visitantes, explica las opciones del menú, toma pedidos y procura que tengan una experiencia agradable.</p></article>
+  <article class="tarjeta"><div class="icono">📋</div><h3>Administración y organización</h3><p>Apoya en el control de inventario, compras, organización de actividades y seguimiento de las tareas del negocio.</p></article>
+ </div>
+</section>
+<section class="compromiso">
+ <span class="etiqueta" style="color:#e8d6b9">Te esperamos</span>
+ <h2>Un lugar para disfrutar y compartir</h2>
+ <p>En Raíces y Aroma queremos que cada persona encuentre un espacio para hacer una pausa, disfrutar buenos sabores y conectar con la cultura. Nos encantará recibirte.</p>
+ <a class="boton" href="menu.html">Conoce nuestro menú</a>
+</section>
+</main>
+<footer>
+ <strong>☕ Raíces y Aroma</strong>
+ <p>Donde la cultura se disfruta y el arte cobra vida.</p>
+ <p>Proyecto de cafetería, cultura y creatividad.</p>
+ <p><a href="index.html" style="color:#e8d6b9">Inicio</a> · <a href="menu.html" style="color:#e8d6b9">Menú</a> · <a href="#quienes-somos" style="color:#e8d6b9">Quiénes somos</a></p>
+</footer>
+</body>
+</html>
